@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+      "target": "ES2022",
+      "module": "ESNext",
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "strict": true,
+      "skipLibCheck": true,
+      "paths": {
+        "@interfaces/*": ["./src/interfaces/*"],
+        "@controllers/*": ["./src/controllers/*"],
+        "@services/*": ["./src/services/*"],
+        "@enums/*": ["./src/enums/*"],
+        "@dtos/*": ["./src/dtos/*"]
+      }
+    },
+    "$schema": "https://json.schemastore.org/tsconfig"
+  }
