@@ -1,8 +1,9 @@
 import express, { urlencoded } from "express";
 import "@dotenvx/dotenvx/config"
 import { TesouroDiretoRouter } from "@controllers/index"
-import { notFoundResponse } from "./middlewares/NotFound";
 import morgan from 'morgan'
+import { ErrorHandler } from "./middlewares/ErrorHandler";
+import NotFoundError from "./errors/NotFoundError";
 const cors = require('cors');
 
 const app = express()
@@ -13,16 +14,21 @@ const app = express()
 .use(express.json())
 .use(cors())
 
-// Routers
-.use(TesouroDiretoRouter.path, TesouroDiretoRouter.router);
-
 // Health Check
 app.get("/health", (_, res) => {
-    res.send(true)
+    res.json(true)
 })
 
-// Route not found response
-app.use(notFoundResponse);
+// Tesouro Direto
+.use(TesouroDiretoRouter.path, TesouroDiretoRouter.router)
+
+// 404 Handler
+app.use(() => {
+    throw new NotFoundError();
+})
+
+// Error Handlers
+app.use(ErrorHandler)
 
 app.listen(process.env.PORT, () => {
     console.log(`Listening to ${process.env.PORT}`)
