@@ -8,17 +8,19 @@ export function ErrorHandler(
     res: Response, 
     next: NextFunction
 ) {
-    if (process.env.DEBUG === "true") {
+    if (process.env.DEBUG === "false") {
         next(err);
         return;
     }
 
     if (err instanceof CustomError) {
-        const { message, code } = err;
+        const { message, code, ...rest } = err;
         res.status(err.status).json({
             error: {
+                ...rest,
+                status: undefined,
                 message,
-                code
+                code,
             }
         })
         return;

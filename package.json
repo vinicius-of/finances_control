@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "tsx --watch ./src/index.ts",
+    "dev": "tsx --watch ./index.ts",
     "test": "jest",
     "test:dev": "jest --watch",
     "test:cover": "",
@@ -13,11 +13,13 @@
   },
   "dependencies": {
     "@dotenvx/dotenvx": "^1.39.0",
+    "better-sqlite3": "^11.10.0",
     "cors": "^2.8.5",
     "express": "^4.21.2",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
     "@types/express": "^5.0.0",
     "@types/jest": "^29.5.14",
     "@types/morgan": "^1.9.9",

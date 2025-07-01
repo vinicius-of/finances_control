@@ -1,28 +1,33 @@
-import { Request, Response, Router } from 'express'
-import { params } from '../middlewares/Validations';
+import { Request, RequestHandler, Response, Router } from 'express'
+import { body, params } from '../middlewares/Validations';
 import dtos from '@dtos/index';
 
 const router = Router();
 const path = "/tesouro-direto"
 
-router.get(path, params(dtos.DTOTesouroDireto), (req: Request, res: Response) => {
-    res.send('OK')
+router.get('/', (req, res) => {
+    res.send('GET')
 })
 
-router.get<{id: string}>(`${path}/{id}`, (req, res) => {
+router.get<{id: string}>('/:id', (req, res) => {
     const { id } = req.params;
+    
 })
 
-router.post(path,(req, res) => {
-
+router.post('/', body(dtos.TesouroDiretoSchema), (req, res) => {
+    res.json()
 })
 
-router.put(path, (req, res) => {
-
+router.put('/', (req, res) => {
+    res.send('PUT')
 })
 
-router.put(`${path}/archive`, (req, res) => {
-
+router.put('/archive', (req, res) => {
+    res.status(202).send("archived")
 })
 
-export default {router, path};
+router.post('/import', (req, res) => {
+    
+})
+
+export default { router, path };

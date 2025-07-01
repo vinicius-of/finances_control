@@ -1,5 +1,5 @@
-import DTOTesouroDireto from '@dtos/TesouroDireto'
-import DTORendaFixa from '@dtos/RendaFixa'
-import DTOAcoes from '@dtos/Acoes'
+import { TesouroDiretoSchema } from '@dtos/TesouroDireto'
+import RendaFixaDTO from '@dtos/RendaFixa'
+import AcoesDTO from '@dtos/Acoes'
 
-export default { DTOTesouroDireto, DTORendaFixa, DTOAcoes } as const;
+export default { TesouroDiretoSchema, RendaFixaDTO, AcoesDTO } as const;

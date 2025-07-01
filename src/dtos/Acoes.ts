@@ -1,9 +1,11 @@
-const DTOTesouroDireto = {
+import DtoObject from "./dto.type";
+
+const AcoesDto: DtoObject<{}> = {
     name: "string",
     value: "number",
-    boughtAt: "Date",
+    boughtAt: "object",
     profitability: "number",
     tributeType: "string"
 } as const
 
-export default DTOTesouroDireto;
+export default AcoesDto;

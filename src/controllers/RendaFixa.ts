@@ -23,4 +23,8 @@ router.put(`${path}/archive`, (req, res) => {
 
 })
 
+router.post('/import', (req, res) => {
+    
+})
+
 export default {router, path};

@@ -8,26 +8,26 @@ const cors = require('cors');
 
 const app = express()
 
-// Middlewares
+// // Middlewares
 .use(morgan('dev'))
 .use(urlencoded({ extended: true }))
 .use(express.json())
 .use(cors())
 
+// Tesouro Direto
+app.use(TesouroDiretoRouter.path, TesouroDiretoRouter.router)
+
 // Health Check
-app.get("/health", (_, res) => {
+app.get("/health-check", (_, res) => {
     res.json(true)
 })
 
-// Tesouro Direto
-.use(TesouroDiretoRouter.path, TesouroDiretoRouter.router)
-
-// 404 Handler
+// // 404 Handler
 app.use(() => {
     throw new NotFoundError();
 })
 
-// Error Handlers
+// // Error Handlers
 app.use(ErrorHandler)
 
 app.listen(process.env.PORT, () => {
