@@ -7,13 +7,15 @@
     "strict": true,
     "skipLibCheck": true,
     "outDir": "./dist",
-    "rootDir": "./src",
+    "rootDir": "./",
     "paths": {
       "@interfaces/*": ["./src/interfaces/*"],
       "@controllers/*": ["./src/controllers/*"],
       "@services/*": ["./src/services/*"],
       "@enums/*": ["./src/enums/*"],
-      "@dtos/*": ["./src/dtos/*"]
+      "@dtos/*": ["./src/dtos/*"],
+      "@errors/*": ["./src/errors/*"],
+      "@middlewares/*": ["./src/middlewares/*"]
     }
   },
   "exclude": ["node_modules", "dist"],
