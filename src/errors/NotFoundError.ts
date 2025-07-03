@@ -1,10 +1,10 @@
-import CustomError from "./CustomError";
+import CustomError from './CustomError';
 
 export default class NotFoundError extends CustomError<string> {
-    constructor() {
-        super({
-            message: "Route not found",
-            status: 404
-        });
-    }
+  constructor() {
+    super({
+      message: 'Route not found',
+      status: 404,
+    });
+  }
 }

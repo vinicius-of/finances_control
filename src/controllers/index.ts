@@ -1,5 +1,5 @@
-import TesouroDiretoRouter from '@controllers/TesouroDireto'
-import RendaFixaRouter from '@controllers/RendaFixa'
-import AcoesRouter from '@controllers/Acoes'
+import TesouroDiretoRouter from '@controllers/TesouroDireto';
+import RendaFixaRouter from '@controllers/RendaFixa';
+import AcoesRouter from '@controllers/Acoes';
 
-export { TesouroDiretoRouter, RendaFixaRouter, AcoesRouter};
+export { TesouroDiretoRouter, RendaFixaRouter, AcoesRouter };
