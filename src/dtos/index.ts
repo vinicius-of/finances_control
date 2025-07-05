@@ -1,3 +1,3 @@
-import { VentureSchema } from '@dtos/VentureDto';
+import { VentureInput } from '@dtos/VentureDto';
 
-export default { VentureSchema } as const;
+export default { VentureInput } as const;

@@ -1,10 +1,12 @@
 import express, { urlencoded } from 'express';
 import '@dotenvx/dotenvx/config';
-import { TesouroDiretoRouter } from '@controllers/index';
+import { VenturesRouter } from '@controllers/index';
 import morgan from 'morgan';
 import { ErrorHandler } from '@middlewares/ErrorHandler';
 import NotFoundError from '@errors/NotFoundError';
-const cors = require('cors');
+//@ts-expect-error CORS does not need types for this config
+import cors from 'cors';
+import MongoManager from './src/configs/mongoose';
 
 const app = express()
   // // Middlewares
@@ -13,8 +15,10 @@ const app = express()
   .use(express.json())
   .use(cors());
 
-// Tesouro Direto
-app.use(TesouroDiretoRouter.path, TesouroDiretoRouter.router);
+new MongoManager().init('mongodb://127.0.0.1:27017/test');
+
+// Ventures
+app.use(VenturesRouter.path, VenturesRouter.router);
 
 // Health Check
 app.get('/health-check', (_, res) => {

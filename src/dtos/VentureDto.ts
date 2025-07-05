@@ -1,5 +1,5 @@
 import Venture from '@interfaces/Venture';
-import SchemaOf from './dto.type';
+import DtoOf from './dto.type';
 
 export type VentureDto = {
   name: string;
@@ -9,7 +9,7 @@ export type VentureDto = {
   tributeType: string;
 };
 
-export const VentureSchema: SchemaOf<Omit<Venture, 'archive'>> = {
+export const VentureInput: DtoOf<Omit<Venture, 'archive'>> = {
   name: 'string',
   value: 'number',
   boughtAt: 'object',

@@ -1,5 +1,3 @@
-import TesouroDiretoRouter from '@controllers/TesouroDireto';
-import RendaFixaRouter from '@controllers/RendaFixa';
-import AcoesRouter from '@controllers/Acoes';
+import VenturesRouter from '@controllers/Ventures';
 
-export { TesouroDiretoRouter, RendaFixaRouter, AcoesRouter };
+export { VenturesRouter };
