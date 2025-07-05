@@ -20,7 +20,7 @@ export default defineConfig([
     },
     rules: {
       ...eslintConfigPrettier.rules,
-      'prettier/prettier': 'error',
+      'prettier/prettier': 'off',
       'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': 'warn',
       '@typescript-eslint/no-explicit-any': 'error',

@@ -1,7 +1,9 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "target": "ES2022",
-    "module": "ESNext",
+    "target": "es2022",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -15,9 +17,9 @@
       "@enums/*": ["./src/enums/*"],
       "@dtos/*": ["./src/dtos/*"],
       "@errors/*": ["./src/errors/*"],
-      "@middlewares/*": ["./src/middlewares/*"]
+      "@middlewares/*": ["./src/middlewares/*"],
+      "@schemas/*": ["./src/schemas/*"]
     }
   },
-  "exclude": ["node_modules", "dist"],
-  "$schema": "https://json.schemastore.org/tsconfig"
+  "exclude": ["node_modules", "dist"]
 }
